@@ -1,0 +1,29 @@
+Howto:
+
+# ------------------------------------------------------------------------------
+
+cd /root/
+
+apt-get update && apt-get install build-essential checkinstall && apt-get build-dep imagemagick -y
+
+wget http://www.imagemagick.org/download/ImageMagick.tar.gz
+
+tar xzvf ImageMagick.tar.gz
+
+cd ImageMagick-6.9*
+
+./configure --prefix=/opt/imagemagick-6.9
+
+make
+
+checkinstall
+
+rm /bin/convert /usr/bin/convert /usr/local/bin/convert
+
+ln -s /opt/imagemagick-6.9/bin/convert /usr/bin/convert
+
+convert -version
+
+apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+
+# ------------------------------------------------------------------------------
