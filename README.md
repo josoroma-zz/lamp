@@ -24,11 +24,7 @@ How to install a working Docker environment on Windows using Boot2docker?
 
 [humor] If you are using linux... I am very glad, you are probably a "badass curious monkey". [/humor]
 
-<<<<<<< HEAD
-## docker pull <image>
-=======
 ## docker pull [image]
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 https://docs.docker.com/reference/commandline/cli/
 
@@ -79,11 +75,7 @@ boot2docker info
 boot2docker ip
 ```
 
-<<<<<<< HEAD
-## Create a local app skeleton for development
-=======
 ### Create a local app skeleton for your local/host development environment:
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 mkdir -p ~/Docker/lamp
@@ -104,11 +96,7 @@ cd ~/Docker/lamp
 docker build -t ubuntu/lamp:stable .
 ```
 
-<<<<<<< HEAD
-## Check the virtual machine "/dev/sda1" size.
-=======
 ### Check the virtual machine "/dev/sda1" size:
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 df -h
@@ -122,12 +110,8 @@ cgroup                 1004.2M         0   1004.2M   0% /sys/fs/cgroup
 none                    232.6G     89.0G    143.6G  38% /Users
 /dev/sda1                18.2G    267.0M     17.0G   2% /mnt/sda1/var/lib/docker/aufs
 ```
-<<<<<<< HEAD
-### Use your OS X user folder as Document Root
-=======
 
 ## Use your OS X user folder as Document Root
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 OS X users should use a shared local resource inside /Users folder:
 
@@ -166,36 +150,21 @@ ubuntu/lamp:stable
 watch docker logs lamp
 ```
 
-<<<<<<< HEAD
-## Create a new Bash session in the lamp container.
-=======
 ## Create a new Bash session in the lamp container
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 docker exec -it lamp bash
 ```
 
-<<<<<<< HEAD
-## Go to the document root and pull the base project repo
-=======
 ## Go to the document root and pull your base project repository
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 cd ~/Docker/lamp/development
 
-<<<<<<< HEAD
-git clone git@bitbucket.org:<username>/<app>.git .
-```
-
-## Deleting unsuccessful image and container builds
-=======
 git clone git@github.com:josoroma/lamp.git .
 ```
 
 ## Deleting unsuccessful image and container "builds"
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 docker stop lamp && docker rm lamp && docker rmi ubuntu/lamp:stable
@@ -275,21 +244,13 @@ docker exec lamp tail -f /var/log/mysql/error.log
 
 ## MySQL connection to the remote container
 
-<<<<<<< HEAD
-### Database development connection
-=======
 ### Development connection:
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 mysql -u usrdevelopment -ppassdevelopment dbdevelopment -P 3306 -h www.localhost.com
 ```
 
-<<<<<<< HEAD
-### Database development backup
-=======
 ### Development backup:
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 backups
@@ -297,11 +258,7 @@ backups
 mysqldump -u usrdevelopment -ppassdevelopment dbdevelopment -P 3306 -h www.localhost.com > development_`date +%F_%T | sed 's/[:-]/_/g'`_.sql
 ```
 
-<<<<<<< HEAD
-### Database staging connection
-=======
 ### Ataging connection:
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 backups
@@ -309,31 +266,19 @@ backups
 mysql -u usrstaging -ppassstaging dbstaging -P 3306 -h www.localhost.com
 ```
 
-<<<<<<< HEAD
-### Database staging backup
-=======
 ### Staging backup:
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 mysqldump -u usrstaging -ppassstaging dbstaging -P 3306 -h www.localhost.com > staging_`date +%F_%T | sed 's/[:-]/_/g'`_.sql
 ```
 
-<<<<<<< HEAD
-## Get container IP
-=======
 ## Display lamp container IP
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' lamp
 ```
 
-<<<<<<< HEAD
-## Get container PID
-=======
 ## Display lamp container PID
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
 
 ```
 docker inspect --format '{{ .State.Pid }}' lamp
@@ -344,12 +289,3 @@ docker inspect --format '{{ .State.Pid }}' lamp
 ```
 docker stop lamp && docker rm lamp && docker rmi ubuntu/lamp:stable
 ```
-<<<<<<< HEAD
-
-```
-docker ps -a
-
-docker images
-```
-=======
->>>>>>> Ubuntu Lamp Container - Agile Development Environment
