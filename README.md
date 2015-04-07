@@ -258,7 +258,7 @@ backups
 mysqldump -u usrdevelopment -ppassdevelopment dbdevelopment -P 3306 -h www.localhost.com > development_`date +%F_%T | sed 's/[:-]/_/g'`_.sql
 ```
 
-### Ataging connection:
+### Staging connection:
 
 ```
 backups
