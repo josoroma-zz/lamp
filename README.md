@@ -93,6 +93,10 @@ cd ~/Docker/lamp
 ## Save our new custom image build
 
 ```
+cd ~/Docker/lamp/Dockerfile
+
+git clone git@github.com:josoroma/lamp.git .
+
 docker build -t ubuntu/lamp:stable .
 ```
 
